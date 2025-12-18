@@ -1,5 +1,4 @@
 // src/components/Header.jsx
-import React from 'react';
 import { PROFILE_DATA } from '../data/portfolioData.js'; // Added .js extension
 
 const navItems = ['About', 'Skills', 'Projects', 'Contact'];

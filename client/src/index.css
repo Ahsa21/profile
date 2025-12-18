@@ -25,10 +25,10 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
+  /* Remove display: flex and place-items: center */
   min-width: 320px;
   min-height: 100vh;
+  background-color: #111827; /* Matches bg-gray-900 in your App.tsx */
 }
 
 h1 {

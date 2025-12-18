@@ -1,10 +1,15 @@
-// src/sections/HeroSection.jsx
-import React from 'react';
-import { Github, Linkedin, Mail } from 'lucide-react';
-import { PROFILE_DATA } from '../data/portfolioData.js'; // Added .js extension
-import { useFadeIn } from '../hooks/useFadeIn.js'; // Added .js extension
+// src/sections/HeroSection.tsx
 
-export const HeroSection = () => {
+import React from 'react'; // Retained for clarity, though often not strictly required in modern React
+import { Github, Linkedin, Mail } from 'lucide-react';
+
+// NOTE: You must rename your data and hooks files to .ts in your filesystem.
+// You will also need to define the type/interface for PROFILE_DATA in portfolioData.ts
+import { PROFILE_DATA } from '../data/portfolioData.ts'; 
+import { useFadeIn } from '../hooks/useFadeIn.ts'; 
+
+// This component receives no props, so the definition is simple:
+export const HeroSection: React.FC = () => {
   const fadeIn = useFadeIn(700, 200);
 
   return (
@@ -50,7 +55,12 @@ export const HeroSection = () => {
               src={PROFILE_DATA.profilePicUrl}
               alt={PROFILE_DATA.name}
               className="w-40 h-40 md:w-60 md:h-60 object-cover rounded-full"
-              onError={(e) => { e.target.onerror = null; e.target.src = "https://placehold.co/150x150/1e293b/ffffff?text=AS" }}
+              // Fixes TS2339 by telling TS the target is an HTMLImageElement
+              onError={(e) => { 
+                const target = e.target as HTMLImageElement;
+                target.onerror = null; 
+                target.src = "https://placehold.co/150x150/1e293b/ffffff?text=AS" 
+              }}
             />
           </div>
         </div>
@@ -58,3 +68,22 @@ export const HeroSection = () => {
     </section>
   );
 };
+
+// ---
+// ⚠️ REQUIRED NEXT STEP IN YOUR 'portfolioData.ts'
+// To prevent the TS7016 error on PROFILE_DATA, you must define the type 
+// for the exported data in your 'portfolioData.ts' file:
+/* export interface ProfileData {
+  name: string;
+  tagline: string;
+  bio: string;
+  linkedinUrl: string;
+  githubUrl: string;
+  email: string;
+  profilePicUrl: string;
+}
+
+export const PROFILE_DATA: ProfileData = {
+  // ... your actual data here
+};
+*/

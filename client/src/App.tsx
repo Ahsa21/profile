@@ -1,15 +1,14 @@
 // src/App.jsx
-import React from 'react';
 
 // Import all structural components
-import { Header } from './components/Header.jsx';
-import { Footer } from './components/Footer.jsx';
+import { Header } from './components/Header.js';
+import { Footer } from './components/Footer.js';
 
 // Import all page sections
-import { HeroSection } from './sections/HeroSection.jsx';
-import { SkillsSection } from './sections/SkillsSection.jsx';
-import { ProjectsSection } from './sections/ProjectsSection.jsx';
-import { ContactSection } from './sections/ContactSection.jsx';
+import { HeroSection } from './sections/HeroSection.js';
+import { SkillsSection } from './sections/SkillsSection.js';
+import { ProjectsSection } from './sections/ProjectsSection.js';
+import { ContactSection } from './sections/ContactSection.js';
 
 
 /**

@@ -1,7 +1,6 @@
 // src/sections/SkillsSection.jsx
-import React from 'react';
 import { SKILLS } from '../data/portfolioData.js'; 
-import { SkillCard } from '../components/SkillCard.jsx'; 
+import { SkillCard } from '../components/SkillCard.js'; 
 
 export const SkillsSection = () => (
   <section id="skills" className="py-20 bg-gray-800">

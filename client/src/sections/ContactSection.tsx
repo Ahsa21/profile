@@ -1,5 +1,4 @@
 // src/sections/ContactSection.jsx
-import React from 'react';
 import { Mail } from 'lucide-react';
 import { PROFILE_DATA } from '../data/portfolioData.js'; 
 import { useFadeIn } from '../hooks/useFadeIn.js'; 

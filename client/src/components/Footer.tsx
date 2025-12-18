@@ -1,5 +1,4 @@
 // src/components/Footer.jsx
-import React from 'react';
 import { PROFILE_DATA } from '../data/portfolioData.js'; // Added .js extension
 
 export const Footer = () => (

@@ -1,7 +1,6 @@
 // src/sections/ProjectsSection.jsx
-import React from 'react';
 import { PROJECTS } from '../data/portfolioData.js'; 
-import { ProjectCard } from '../components/ProjectCard.jsx'; 
+import { ProjectCard } from '../components/ProjectCard.js'; 
 
 export const ProjectsSection = () => (
   <section id="projects" className="py-20 bg-gray-900">
